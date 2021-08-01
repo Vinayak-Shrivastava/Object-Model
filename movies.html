@@ -1,0 +1,50 @@
+<html>
+ <head> 
+  <title> MOVIES </title>
+  <style>
+   #table
+   {
+    text-align:center;
+   }   
+   #c1
+   {
+    background-color: #f8f9f9;
+   }  
+   #c2
+   {
+    background-color: #c2c5cc;
+   }
+   
+
+  </style>
+ </head>
+ <body>
+  <center>  
+<form>
+  <label for="movie">Movie Name :</label>
+  <input type="text" id="i1" name="movie" placeholder="Enter Movie name"><br>
+  <label for="imdb">IMDB Rating:</label>
+  <input type="number" id="i2" name="imdb" placeholder="Enter IMDB rating">
+</form>
+   <button onclick="add_row()">SUBMIT</button><br><br> 
+   <table id="table" border=3>
+    <tr><th>Serial No.</th><th>Movie Name </th><th>IMDB Rating</th></tr>
+  </center>
+  <script>
+   a=0;
+   function add_row()
+   {
+    if(document.getElementById("i1").value == "" || document.getElementById("i2").value == "") alert("Please Enter all details");
+    else
+    {
+     a++;
+     document.getElementById("table").insertRow(a);
+     document.getElementById("table").rows[a].innerHTML = "<td>"+a+".</td><td>"+document.getElementById("i1").value+"</td><td>"+document.getElementById("i2").value+"</td>";
+     a%2==0?document.getElementById("table").rows[a].id = "c1" : document.getElementById("table").rows[a].id = "c2";
+     document.getElementById("i1").value = "";
+     document.getElementById("i2").value = "";
+    }
+   }
+  </script>
+ </body>
+</html>
