@@ -4,7 +4,7 @@
   <style>
    #table
    {
-    text-align:center;
+    text-align:center;                           // center align the contents of the cells of the table 
    }   
    #c1
    {
@@ -22,27 +22,27 @@
   <center>  
 <form>
   <label for="movie">Movie Name :</label>
-  <input type="text" id="i1" name="movie" placeholder="Enter Movie name"><br>
+  <input type="text" id="i1" name="movie" placeholder="Enter Movie name"><br>          
   <label for="imdb">IMDB Rating:</label>
   <input type="number" id="i2" name="imdb" placeholder="Enter IMDB rating">
 </form>
-   <button onclick="add_row()">SUBMIT</button><br><br> 
+   <button onclick="add_row()">SUBMIT</button><br><br>              
    <table id="table" border=3>
     <tr><th>Serial No.</th><th>Movie Name </th><th>IMDB Rating</th></tr>
   </center>
   <script>
-   a=0;
+   a=1;             // to store current number of rows
    function add_row()
    {
-    if(document.getElementById("i1").value == "" || document.getElementById("i2").value == "") alert("Please Enter all details");
+    if(document.getElementById("i1").value == "" || document.getElementById("i2").value == "") alert("Please Enter all details");  // not add a row if any input field is empty
     else
     {
-     a++;
-     document.getElementById("table").insertRow(a);
-     document.getElementById("table").rows[a].innerHTML = "<td>"+a+".</td><td>"+document.getElementById("i1").value+"</td><td>"+document.getElementById("i2").value+"</td>";
-     a%2==0?document.getElementById("table").rows[a].id = "c1" : document.getElementById("table").rows[a].id = "c2";
-     document.getElementById("i1").value = "";
+     document.getElementById("table").insertRow(a);       //add a row to the last
+     document.getElementById("table").rows[a].innerHTML = "<td>"+a+".</td><td>"+document.getElementById("i1").value+"</td><td>"+document.getElementById("i2").value+"</td>";    //innerHTML of row id edited
+     a%2==0?document.getElementById("table").rows[a].id = "c1" : document.getElementById("table").rows[a].id = "c2"; //alterante rows are given different id to create a colour pattern
+     document.getElementById("i1").value = "";          //input field values set to null
      document.getElementById("i2").value = "";
+      a++;        //number of rows increased by 1.
     }
    }
   </script>
