@@ -4,11 +4,11 @@
   <style>
    #table
    {
-    text-align:center;                           // center align the contents of the cells of the table 
+    text-align:center;                           /* center align the contents of the cells of the table */
    }   
    #c1
    {
-    background-color: #f8f9f9;
+    background-color: #f8f9f9;              /*alternate ids are given different colour to create colour pattern in table*/
    }  
    #c2
    {
@@ -22,11 +22,11 @@
   <center>  
 <form>
   <label for="movie">Movie Name :</label>
-  <input type="text" id="i1" name="movie" placeholder="Enter Movie name"><br>          
+  <input type="text" id="i1" name="movie" placeholder="Enter Movie name"><br>          <!-- input fields -->
   <label for="imdb">IMDB Rating:</label>
   <input type="number" id="i2" name="imdb" placeholder="Enter IMDB rating">
 </form>
-   <button onclick="add_row()">SUBMIT</button><br><br>              
+   <button onclick="add_row()">SUBMIT</button><br><br>                                 <!-- button for submission and calling function to add row in the table-->
    <table id="table" border=3>
     <tr><th>Serial No.</th><th>Movie Name </th><th>IMDB Rating</th></tr>
   </center>
